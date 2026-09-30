@@ -4,6 +4,16 @@ Release work checked on 30 September 2026 using Node 24.19.0, pnpm 11.19.0, Reac
 
 ## Local release checks
 
+### Version 0.2 follow-up
+
+The clean-install follow-up passed ESLint, TypeScript, Prettier, **18 domain/API/localization tests**, both production builds and isolated production-server restart checks. **4 local SQLite browser scenarios** and **26 public/static Edge browser tests** passed on the final source, including 168 multilingual layout observations at 320/360/390/414/768/1280/1440px in portrait and landscape. The production dependency advisory audit reported no known vulnerabilities at this snapshot. A source-only clean copy used frozen dependencies with lifecycle scripts disabled; no user database or credentials were copied.
+
+The independent gpt-6.1-sol/xhigh live audit reproduced eight asynchronous/backup/history defects against the prior public build. Fixes, two additional stale-read/history recovery regressions, complete control coverage and realistic limitations are recorded in [QA.md](QA.md). EN/RU/KK interface copy has 338 dictionary entries; static-key coverage, placeholders, Unicode, counts and dynamic validation are tested. User-authored content and schema keys stay unchanged. Four updated real screenshots show the final rendered interface. [Third-party notices](THIRD_PARTY_NOTICES.md) record bundled fonts/icons and their licenses.
+
+These checks validate local implementation. Exact-commit remote CI, Pages deployment and subsequent live checks are supplied with the release handoff only after they succeed. Professional native-language review, real mobile hardware, Safari and assistive-technology user studies remain unperformed.
+
+### Initial version 0.1 release
+
 - TypeScript, ESLint, Prettier, production builds for both architectures, and production dependency audit passed. The audit reported no known production dependency vulnerabilities at this snapshot; it does not guarantee vulnerability-free software.
 - **13 domain/API tests passed.** Coverage includes stable-ID diffs across title/text/links/screenshots/order/add/remove, bounded word diff, documented Markdown/JSON parsing and round trips, malformed/unsafe imports, version history, evidence validation, original timestamp inheritance, context invalidation, stale writes, identical-version rejection, SQLite close/reopen, HTTP exports and complete backup/restore, cross-origin rejection, malformed paths and requests. A near-limit workspace backup checks consistent export/restore byte limits. Invalid inherited evidence and blank reviewer observations are rejected.
 - **4 local browser scenarios passed** using isolated Microsoft Edge contexts and a temporary SQLite database. Covered empty/error states, complete import/revision/review/correction/screenshot/export flow, tested and needs-update observations, reload, preserved history, historical read-only behavior, search/filter empty states, actual file imports, invalid screenshot handling, native-dialog keyboard interaction, and responsive widths from 375 to 1440px.

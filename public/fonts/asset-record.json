@@ -1,0 +1,15 @@
+[
+  {
+    "name": "ibm-plex-sans-variable.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsans/IBMPlexSans%5Bwdth,wght%5D.ttf",
+    "bytes": 537244,
+    "sha256": "3b031aa4216174205bd8471f88a49b91f093169e9e87bd5262242bc5967fe2e3",
+    "requiredLatinRussianKazakhGlyphsPresent": true
+  },
+  {
+    "name": "OFL-IBM-Plex.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsans/OFL.txt",
+    "bytes": 4456,
+    "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+  }
+]

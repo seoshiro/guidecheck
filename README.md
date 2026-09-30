@@ -8,6 +8,10 @@ A private workspace for maintaining existing instructions. Import a guide, compa
 
 The public release is a free portfolio tool hosted as static files on GitHub Pages. Each browser profile keeps its own IndexedDB workspace. There is no shared writable server, login, or automatic synchronization. The optional local edition uses SQLite and preserves the same workflow. See the storage boundaries below before importing private documents.
 
+Version 0.2 includes English, Russian and Kazakh interface languages, a self-hosted IBM Plex typeface, readable responsive controls and draft-preserving conflict recovery. Language changes preserve document/review content; exports keep stable English schema keys. Choose a language in the workspace or any dialog. The preference is saved only in this browser. Translation review is internal; professional native-language review remains an open validation task.
+
+[Exploratory QA and control coverage](QA.md) records reproduced bugs and regressions. [Asset notices](THIRD_PARTY_NOTICES.md) document free sources, licenses and Kazakh glyph checks. History is paginated for large workspaces; complete exports retain all entries. A complete backup always reads the latest committed browser snapshot, including other tabs' saved work.
+
 ## Run locally
 
 Requires Node.js 24.13+ (built-in `node:sqlite`) and pnpm. This workspace uses Node 24.19.0 and pnpm 11.19.0.
@@ -27,7 +31,7 @@ pnpm start
 
 The lockfile includes platform-specific optional binaries; keep optional dependencies enabled. This verified install skips dependency lifecycle scripts without changing global security settings. The server binds only to `127.0.0.1`. `PORT` overrides 4381; do not select a port used by another local project. Preview uses 4381; isolated tests use 4391–4394.
 
-To preview the exact static/browser architecture, set `VITE_BASE_PATH=/guidecheck/`, run `pnpm build:browser`, then `pnpm preview:browser` and open `http://127.0.0.1:4394/guidecheck/`. In PowerShell, set the variable with `$env:VITE_BASE_PATH = '/guidecheck/'`. This build writes `dist-browser/`; the SQLite build writes `dist/`.
+To preview the static/browser architecture, run `pnpm build:browser`, then `pnpm preview:browser` and open `http://127.0.0.1:4394/guidecheck/`. The browser build defaults to `/guidecheck/`; `VITE_BASE_PATH` can override the path for another host. In PowerShell, set an override with `$env:VITE_BASE_PATH = '/guidecheck/'`. This build writes `dist-browser/`; the SQLite build writes `dist/`.
 
 ## Try the complete workflow
 

@@ -1,10 +1,54 @@
 {
-  "checkedAt": "2026-09-30T17:40:03.908Z",
+  "checkedAt": "2026-09-30T19:22:29.716Z",
   "url": "http://127.0.0.1:4394/guidecheck/",
-  "syntheticSeedLabel": true,
-  "productionBrowserErrors": [],
-  "externalBrowserRequests": [],
-  "inheritedTimestampExplicitUTC": true,
-  "inheritedOriginalVersionShown": true,
-  "mobile375pxWithoutDocumentOverflow": true
+  "browser": "Microsoft Edge isolated contexts",
+  "captures": [
+    {
+      "file": "guidecheck-desktop.png",
+      "locale": "en",
+      "width": 1440,
+      "height": 1866,
+      "synthetic": true
+    },
+    {
+      "file": "guidecheck-mobile.png",
+      "locale": "en",
+      "width": 390,
+      "height": 3617,
+      "synthetic": true
+    },
+    {
+      "file": "guidecheck-ru-320.png",
+      "locale": "ru",
+      "width": 320,
+      "height": 4131,
+      "synthetic": true
+    },
+    {
+      "file": "guidecheck-kk-390.png",
+      "locale": "kk",
+      "width": 390,
+      "height": 3770,
+      "synthetic": true
+    }
+  ],
+  "publicBrowserTests": 26,
+  "localBrowserTests": 4,
+  "localeLayoutObservations": 168,
+  "widths": [
+    320,
+    360,
+    390,
+    414,
+    768,
+    1280,
+    1440
+  ],
+  "orientations": [
+    "portrait",
+    "landscape"
+  ],
+  "syntheticFixturesOnly": true,
+  "fontsLoaded": true,
+  "hardwareTested": false
 }

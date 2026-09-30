@@ -50,11 +50,11 @@ test("backup selection ignores an earlier slow file read and binds confirmation 
     mimeType: "application/json",
     buffer: Buffer.from(fast),
   });
-  await expect(page.locator(".import-preview")).toContainText("1 guides");
+  await expect(page.locator(".import-preview")).toContainText("1 guide");
   await page.getByLabel("I have saved a current backup").check();
-  await expect(page.locator(".import-preview")).toContainText("1 guides");
+  await expect(page.locator(".import-preview")).toContainText("1 guide");
   await page.waitForTimeout(850);
-  await expect(page.locator(".import-preview")).toContainText("1 guides");
+  await expect(page.locator(".import-preview")).toContainText("1 guide");
   await page
     .getByRole("button", { name: "Restore workspace", exact: true })
     .click();

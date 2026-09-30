@@ -8,6 +8,7 @@ export default tseslint.config(
       "dist-browser/**",
       "node_modules/**",
       "test-results/**",
+      "test-results-*/**",
       "playwright-report/**",
     ],
   },

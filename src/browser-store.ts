@@ -236,9 +236,11 @@ export function exportBrowserGuide(
     format === "markdown" ? "text/markdown" : "application/json",
   );
 }
-export function downloadBrowserBackup(s: Workspace) {
+export async function downloadBrowserBackup(): Promise<Workspace> {
+  const snapshot = await browserRequest("/api/workspace");
   download(
-    serializeWorkspaceBackup(s),
+    serializeWorkspaceBackup(snapshot),
     `guidecheck-workspace-${new Date().toISOString().slice(0, 10)}.json`,
   );
+  return snapshot;
 }

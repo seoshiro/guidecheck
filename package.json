@@ -1,6 +1,6 @@
 {
   "name": "guidecheck",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.19.0",
@@ -15,7 +15,7 @@
     "start": "tsx server/index.ts --production",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "tsx --test tests/core.test.ts tests/api.test.ts tests/workspace.test.ts",
+    "test": "tsx --test tests/core.test.ts tests/api.test.ts tests/workspace.test.ts tests/i18n.test.ts",
     "test:browser:public": "playwright test --config playwright.browser.config.ts",
     "test:browser": "playwright test",
     "test:production": "node scripts/verify-production.mjs",

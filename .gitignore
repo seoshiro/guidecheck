@@ -3,6 +3,7 @@ dist/
 dist-browser/
 data/
 test-results/
+test-results-*/
 playwright-report/
 *.log
 *.sqlite*

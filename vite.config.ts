@@ -15,7 +15,8 @@ export default defineConfig(({ mode }) => ({
       },
     },
   ],
-  base: process.env.VITE_BASE_PATH ?? "/",
+  base:
+    process.env.VITE_BASE_PATH ?? (mode === "browser" ? "/guidecheck/" : "/"),
   server: { host: "127.0.0.1" },
   preview: { host: "127.0.0.1" },
   build: { outDir: mode === "browser" ? "dist-browser" : "dist" },
