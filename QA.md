@@ -16,7 +16,6 @@ Checked 30 September 2026 with original synthetic documents and isolated Edge br
 | Restore a valid 20,000-review workspace; open History. The old UI creates every article and stalls for about four seconds. | Five versions per page and 25 reviews per version page. Full exports retain every record. Regression restores the supported-size synthetic fixture, reads the next page and compares all exported reviews. |
 | A delayed workspace read completes after a newer committed review. The cached UI can move backwards. | All incoming snapshots use a monotonic workspace revision guard. Regression delays the older read and confirms the newer evidence remains visible and survives reload. |
 | Restore a shorter compatible history in another tab while on a later history page. | Page bounds clamp to the available history; regression preserves the same guide ID and verifies the remaining version. |
-
 | Paste valid Unicode JSON with 3,104,881 characters but 5,104,881 UTF-8 bytes. The old parser accepts it despite the stated 5 MB import limit. | Pasted and file imports now use the same UTF-8 byte limit. A regression checks oversized rejection and accepted under-limit Unicode content. Existing workspaces and 50 MB backup compatibility remain unchanged. |
 
 Latency injection makes asynchronous defects reproducible; it does not simulate every browser or device failure. Initial large-history measurements and final test timings are machine-specific, not performance guarantees.
