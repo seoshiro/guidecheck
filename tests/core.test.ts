@@ -174,3 +174,26 @@ test("embedded screenshots round-trip with bracket and backslash descriptions", 
   fixture.steps[0].screenshots[0].name = "Atlas [billing] \\ synthetic";
   assert.deepEqual(parseImport(toMarkdown(fixture), "markdown"), fixture);
 });
+
+test("guide import enforces the same UTF-8 byte limit for pasted Unicode and files", () => {
+  const fixture = {
+    title: "Synthetic Unicode size fixture",
+    owner: "",
+    description: "",
+    steps: Array.from({ length: 100 }, (_, i) => ({
+      id: `s${i}`,
+      title: "Synthetic step",
+      text: "Қ".repeat(20000),
+    })),
+    padding: "a".repeat(1100000),
+  };
+  const source = JSON.stringify(fixture);
+  assert.ok(source.length < 5_000_000);
+  assert.ok(new TextEncoder().encode(source).length > 5_000_000);
+  assert.throws(() => parseImport(source, "json"), /smaller than 5 MB/);
+  fixture.padding = "a".repeat(500000);
+  const accepted = parseImport(JSON.stringify(fixture), "json");
+  assert.equal(accepted.steps.length, 100);
+  assert.equal(accepted.steps[99].text, fixture.steps[99].text);
+  assert.equal(accepted.title, fixture.title);
+});

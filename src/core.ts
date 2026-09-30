@@ -209,7 +209,11 @@ export function parseImport(
   source: string,
   format: "json" | "markdown",
 ): GuideInput {
-  if (!source.trim() || source.length > 5_000_000)
+  if (
+    !source.trim() ||
+    source.length > 5_000_000 ||
+    new TextEncoder().encode(source).length > 5_000_000
+  )
     throw new InputError("Import must contain text and be smaller than 5 MB.");
   if (format === "json") {
     let raw: unknown;
