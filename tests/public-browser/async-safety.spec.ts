@@ -171,7 +171,9 @@ test("pending screenshot blocks save; delayed review save locks mutable fields",
   await expect(
     page.getByLabel("What did you test and observe?"),
   ).toBeDisabled();
-  await expect(page.getByRole("status")).toContainText("Review saved");
+  await expect(
+    page.getByRole("status").filter({ hasText: "Review saved" }),
+  ).toBeVisible();
   await page
     .getByLabel("What did you test and observe?")
     .fill("Next intact evidence B");
@@ -237,7 +239,9 @@ test("cross-tab conflict recovers without discarding import or review evidence",
   ).toBeDisabled();
   await page.getByLabel("I have retested the current version.").check();
   await page.getByRole("button", { name: "Save review", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("Review saved");
+  await expect(
+    page.getByRole("status").filter({ hasText: "Review saved" }),
+  ).toBeVisible();
 });
 test("supported 20,000-entry history stays bounded while full backup preserves every record", async ({
   page,
