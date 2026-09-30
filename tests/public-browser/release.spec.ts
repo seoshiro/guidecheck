@@ -198,7 +198,7 @@ test("public responsive/keyboard/storage failure and malformed backup states", a
   page,
 }) => {
   await page.goto("./");
-  for (const width of [375, 768, 1440]) {
+  for (const width of [375, 400, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 950 });
     expect(
       await page.evaluate(

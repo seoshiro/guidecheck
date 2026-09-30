@@ -159,11 +159,20 @@ test("400px and 1440px views stay within viewport; screenshot and hostile import
   await page.getByLabel("Filter steps").selectOption("all");
   for (const width of [400, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 960 });
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= window.innerWidth,
-      ),
-    ).toBe(true);
+    const layout = await page.evaluate(() => ({
+      width: innerWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+      overflow: Array.from(document.querySelectorAll("body *"))
+        .filter((el) => {
+          const rect = el.getBoundingClientRect();
+          return rect.width > 0 && rect.right > innerWidth + 1;
+        })
+        .slice(0, 12)
+        .map((el) => ({ tag: el.tagName, class: el.className })),
+    }));
+    expect(layout.scrollWidth, JSON.stringify(layout)).toBeLessThanOrEqual(
+      width,
+    );
   }
   await page.getByRole("button", { name: "Import guide", exact: true }).click();
   await page.getByLabel("Format", { exact: true }).selectOption("json");
