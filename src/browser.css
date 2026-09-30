@@ -1,0 +1,91 @@
+.storage-notice {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #d6e3cf;
+  background: #edf4e8;
+  color: #405b38;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.65;
+  padding: 10px 13px;
+  margin-top: 18px;
+}
+.storage-notice > span {
+  flex: 1;
+}
+.storage-notice button {
+  white-space: nowrap;
+}
+.backup-panel > .button {
+  margin-top: 18px;
+}
+.backup-divider {
+  border-top: 1px solid #dce5d5;
+  margin: 25px 0;
+}
+.backup-panel h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.backup-panel > label {
+  margin-top: 18px;
+}
+.backup-panel .restore-confirm {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+.restore-confirm input {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: #226b53;
+}
+.backup-panel .modal-actions {
+  justify-content: space-between;
+  align-items: center;
+}
+.backup-panel .modal-actions .muted {
+  font-size: 10px;
+  max-width: 260px;
+}
+.topbar-actions {
+  display: flex;
+  gap: 9px !important;
+}
+.storage-notice + .page-heading {
+  margin-top: 25px;
+}
+@media (max-width: 700px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 0;
+  }
+  .topbar > div:first-child {
+    width: 100%;
+  }
+  .topbar-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .storage-notice {
+    font-size: 10px;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 7px;
+  }
+  .storage-notice .text-button {
+    font-size: 9px;
+  }
+  .storage-notice > svg {
+    margin-top: 3px;
+  }
+  .backup-panel .modal-actions {
+    flex-wrap: wrap;
+  }
+}

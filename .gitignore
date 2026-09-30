@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-browser/
+data/
+test-results/
+playwright-report/
+*.log
+*.sqlite*
+.env.local
+.env.*.local
+release-tools/
+coverage/

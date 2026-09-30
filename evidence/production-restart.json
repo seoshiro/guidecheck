@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-09-30T17:20:47.247Z",
+  "productionHtml": true,
+  "cspPresent": true,
+  "malformedPathReturns400": true,
+  "serverRestartPreservesWorkspace": true,
+  "reportAfterRestartPreservesEvidence": true,
+  "isolatedTemporaryDatabase": true
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Invite a teammate",
+  "owner": "People operations",
+  "description": "An original synthetic guide.",
+  "steps": [
+    {
+      "id": "invite",
+      "title": "Send an invitation",
+      "text": "Open Workspace settings > Members. Select Invite teammate and choose the Member role.",
+      "links": [],
+      "screenshots": []
+    },
+    {
+      "id": "confirm",
+      "title": "Confirm access",
+      "text": "Ask the teammate to sign in and confirm they can view the workspace.",
+      "links": [],
+      "screenshots": []
+    }
+  ]
+}
